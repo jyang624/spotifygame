@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Script Result</title>
+</head>
+<body>
+    <h1>Logged in Successfully</h1>
+    <p>Access token: {{access_token}}</p>
+    <form action="{% url 'main:get_user_playlists' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Get Playlists</button>
+    </form>
+    <h1>{{header1}}</h1>
+    <ul>
+        {% for x in playlists %}
+        <li>{{ x.playlists_names }}</li>
+        <img src="{{ x.playlists_image_urls }}" alt="playlist image">
+        {% endfor %}      
+    </ul>
+</body>
+</html>

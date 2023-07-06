@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Python Script</title>
+</head>
+<body>
+    <h1>Run Python Script</h1>
+    <form action="{% url 'main:login' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
