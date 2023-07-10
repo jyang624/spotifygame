@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Functions</title>
+</head>
+<body>
+    <h1>Game Functions</h1>
+    <h3>{{ error }}</h3>
+    <p>{{ track.name }}</p>
+    <p>By {{ track.artist }}</p>
+    <img src="{{ track.image_url }}" alt = "{track.name}">
+    <form action="{% url 'main:play_random_track' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">New Track</button>
+    </form>
+    <form action="{% url 'main:pause_track' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Pause Track</button>
+    </form>
+</body>
+</html>
